@@ -1,15 +1,16 @@
 //Global Variables
-
- float ballStartPositionX; 
- float ballStartPositionY;
- float  ballSize ;
+//for speeding up ball try a while statement
+float ballStartPositionX; 
+float ballStartPositionY;
+float  ballSize ;
 int ballMoveX ;//Declare
-  int ballMoveY; //Declare
-  int SpeedX = 4;
-  int SpeedY = 4;
-  int paddleX, paddleY, paddleW, paddleH;
-  boolean up,down, up2, down2;
-  
+int ballMoveY; //Declare
+int SpeedX = 4;
+int SpeedY = 4;
+int paddleX, paddleY, paddleW, paddleH;
+boolean up,down, up2, down2;
+int score1 = 0;
+int score2 = 0;
   
   
 void setup () {
@@ -38,6 +39,8 @@ void setup () {
   void draw ()  {
     //Move the Ball
     
+
+    
 moveBall();
 drawBall();
 
@@ -46,6 +49,11 @@ drawBall();
 drawPaddle(); 
 movePaddle();
 restrictPaddle();
+contactPaddle();
+
+    score();
+
+
 
 
   }
@@ -56,6 +64,13 @@ restrictPaddle();
   if(key == 's' || key == 'S') {
     down = true;
   }
+  if ( key == 'p' || key =='P'){
+    pause = true;
+  }
+    else{
+      pause = false;
+    }
+  
      }
   void keyReleased(){
   if(key == 'w' || key == 'W') {
