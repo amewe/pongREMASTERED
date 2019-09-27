@@ -7,11 +7,12 @@ int ballMoveX ;//Declare
 int ballMoveY; //Declare
 int SpeedX = 4;
 int SpeedY = 4;
-int paddleX, paddleY, paddleW, paddleH;
-boolean up,down, up2, down2;
+int paddleX, paddleY, paddleW, paddleH, paddleX2, paddleY2, paddleW2, paddleH2;
+boolean up,down, up2, down2, pause, start, pauseMenu
+;
 int score1 = 0;
 int score2 = 0;
-  
+
   
 void setup () {
   fullScreen();
@@ -22,6 +23,13 @@ void setup () {
   paddleY = displayHeight/3;
   paddleW = displayWidth/64;
   paddleH = displayHeight/6;
+  paddleX2 = displayWidth - displayWidth/10 ;
+  paddleY2 = displayHeight - displayHeight*6/9;
+  paddleW2 = displayWidth/64;
+  paddleH2 = displayHeight/6;
+  
+  
+  
   //int regularMode;
   //int darkMode;
    
@@ -40,18 +48,22 @@ void setup () {
     //Move the Ball
     
 
-    
 moveBall();
 drawBall();
 
 
 
 drawPaddle(); 
+drawPaddle2();
 movePaddle();
+movePaddle2();
 restrictPaddle();
+restrictPaddle2();
 contactPaddle();
+contactPaddle2();
 
     score();
+  
 
 
 
@@ -64,20 +76,34 @@ contactPaddle();
   if(key == 's' || key == 'S') {
     down = true;
   }
-  if ( key == 'p' || key =='P'){
-    pause = true;
-  }
-    else{
-      pause = false;
+      if ( key == 'i' || key == 'I'){
+        up2 = true;
+      }
+      
+      if ( key == 'k' || key == 'K'){
+        down2 = true;
+      }
+      if ( key == 'p' || key == 'P'){
+        pause = true;
+      }
+      if ( key == '-'){
+        exit();
+      }
     }
   
-     }
+     
   void keyReleased(){
   if(key == 'w' || key == 'W') {
     up = false;
   }
   if(key == 's' || key == 'S') {
     down = false;
+  }
+    if(key == 'i' || key == 'I') {
+    up2 = false;
+  }
+  if(key == 'k' || key == 'K') {
+    down2 = false;
   }
   
    

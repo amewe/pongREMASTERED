@@ -1,9 +1,6 @@
-
-
+  
 void drawPaddle(){
      rect(paddleX, paddleY, paddleW, paddleH);
-
-  
 }
 
 void movePaddle(){
@@ -17,7 +14,7 @@ void movePaddle(){
 }
 
 void restrictPaddle(){
-  if(paddleY - paddleH/3 <  0 ){
+  if(paddleY - paddleH/8 <  0 ){
     paddleY = paddleH/16;
   }
   if (paddleY + paddleH >= displayHeight){
@@ -25,9 +22,11 @@ void restrictPaddle(){
   }
   }
   
- /* void contactPaddle(){
-    if(ballMoveX
+ void contactPaddle(){
+    if(ballMoveX  <= paddleX + paddleW*2 && ballMoveY <= paddleY + paddleH && ballMoveY  >= paddleY  ){
+      SpeedX = -SpeedX ; 
+    }
     
     
-  }*/
+  }
   
