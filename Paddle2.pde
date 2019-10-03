@@ -24,11 +24,10 @@ void restrictPaddle2(){
   
   void contactPaddle2(){
     if(ballMoveX  >= paddleX2 - paddleW2  && ballMoveY <= paddleY2 + paddleH2 && ballMoveY  >= paddleY2  ){
-      SpeedX = -SpeedX ; 
-      if(score1 + 5 < score2)
-      SpeedX= -SpeedX/2;
+      if(SpeedX > 0){
+      SpeedX = -SpeedX ; }
     }
-    
+   
   }
   
   

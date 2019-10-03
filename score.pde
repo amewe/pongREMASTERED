@@ -6,13 +6,13 @@ void score () {
 if (ballMoveX <= displayWidth/16 ){
   setup();
   SpeedX=-SpeedX;
-  score1= score1 + 1;
+  score2= score2 + 1;
 }
 
 if (ballMoveX >= paddleX2 ){
   setup();
   SpeedX=-SpeedX;
-  score2= score2 + 1;
+  score1= score1 + 1;
 }
 
 
