@@ -11,11 +11,18 @@ int paddleX, paddleY, paddleW, paddleH, paddleX2, paddleY2, paddleW2, paddleH2;
 boolean up, down, up2, down2, pause, start, pauseMenu;
 int score1 = 0;
 int score2 = 0;
+int winScore = 2;
+color color1 = color(#950F8F);
+color color2 = color(#950F8F);
+color regularButton = #FF6803 ; 
+color hoverOverButton = #FF0B03 ;
 
 
 void setup () {
 
   fullScreen();
+   quitButtonDraw();
+
   ballStartPositionX = displayWidth*1/2; 
   ballStartPositionY = displayHeight*1/2 ;
   ballSize = displayWidth*1/28;
@@ -32,7 +39,8 @@ void setup () {
 
   //int regularMode;
   //int darkMode;
-
+ textSize(30);
+ textAlign( CENTER, CENTER);
 
   ballMoveX = int (ballStartPositionX) ;//Populate
   ballMoveY = int (ballStartPositionY); //Populate
@@ -50,11 +58,10 @@ void setup () {
   }
   SpeedY = 4*number;
 }
-
+ 
 
 void draw () {
   //Move the Ball
-
 
   moveBall();
   drawBall();
@@ -73,6 +80,8 @@ void draw () {
   score();
   paddleHelp();
   paddleHelp2();
+  gameEnd();
+  //gameEndScreen
 }
 void keyPressed() {
   if (key == 'w' || key == 'W') {
