@@ -16,13 +16,13 @@ color color1 = color(#950F8F);
 color color2 = color(#950F8F);
 color regularButton = #FF6803 ; 
 color hoverOverButton = #FF0B03 ;
+int regularMode;
+int darkMode;
 
 
 void setup () {
 
   fullScreen();
-   quitButtonDraw();
-
   ballStartPositionX = displayWidth*1/2; 
   ballStartPositionY = displayHeight*1/2 ;
   ballSize = displayWidth*1/28;
@@ -37,8 +37,7 @@ void setup () {
 
 
 
-  //int regularMode;
-  //int darkMode;
+  
  textSize(30);
  textAlign( CENTER, CENTER);
 
@@ -81,7 +80,9 @@ void draw () {
   paddleHelp();
   paddleHelp2();
   gameEnd();
-  //gameEndScreen
+  quitButtonDraw();
+
+  
 }
 void keyPressed() {
   if (key == 'w' || key == 'W') {
@@ -96,6 +97,9 @@ void keyPressed() {
 
   if ( key == 'k' || key == 'K') {
     down2 = true;
+  }
+  if ( key == 'q' || key == 'Q') {
+    start = true;
   }
 }
 
@@ -113,4 +117,10 @@ void keyReleased() {
   if (key == 'k' || key == 'K') {
     down2 = false;
   }
+}
+
+void mousePressed(){
+   if (mouseX > displayWidth - paddleW*4 && mouseX < displayWidth && mouseY>0 && mouseY < displayHeight/3 - paddleH){
+     exit();
+   }
 }

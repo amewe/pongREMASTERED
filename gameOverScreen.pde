@@ -11,14 +11,15 @@ void gameEnd() {
 
 void gameEndScreen(String text, color c) {
   
+  
   SpeedX = 0;
   SpeedY = 0;
   
-  text("GAME OVER!", displayWidth /3 + displayWidth/7, displayHeight/2 - 40);
+  text("GAME OVER!", displayWidth /3 + displayWidth/7, displayHeight/3 - 40);
   fill(#F53711);
-  text(text, displayWidth /3 + displayWidth/7,  displayHeight/2 - 5);
+  text(text, displayWidth /3 + displayWidth/7,  displayHeight/3 - 5);
  fill(#F53711);
-  text("CLICK TO PLAY AGAIN", displayWidth /3 + displayWidth/7, displayHeight/2 + 30);
+  text("CLICK TO PLAY AGAIN", displayWidth /3 + displayWidth/7, displayHeight/3 + 30);
    fill(color2);
    
   if (mousePressed) {
