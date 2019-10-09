@@ -11,7 +11,7 @@ int paddleX, paddleY, paddleW, paddleH, paddleX2, paddleY2, paddleW2, paddleH2;
 boolean up, down, up2, down2, pause, start, pauseMenu;
 int score1 = 0;
 int score2 = 0;
-int winScore = 2;
+int winScore = 5;
 color color1 = color(#950F8F);
 color color2 = color(#950F8F);
 color regularButton = #FF6803 ; 
@@ -25,13 +25,13 @@ void setup () {
   fullScreen();
   ballStartPositionX = displayWidth*1/2; 
   ballStartPositionY = displayHeight*1/2 ;
-  ballSize = displayWidth*1/28;
+  ballSize = displayWidth*1/64;
   paddleX = displayWidth/16;
   paddleY = displayHeight/3;
   paddleW = displayWidth/64;
   paddleH = displayHeight/6;
   paddleX2 = displayWidth - displayWidth/10 ;
-  paddleY2 = displayHeight - displayHeight*6/9;
+  paddleY2 = displayHeight - displayHeight*7/9;
   paddleW2 = displayWidth/64;
   paddleH2 = displayHeight/6;
 
